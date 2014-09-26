@@ -24,6 +24,15 @@
     log out
     boop 
     bop
+      <ul>
+        <% if session[:user_id] %>
+          <li><a href="/user/new">new user</a></li>
+          <li><a href="/logout">log out</a></li>
+        <% else %>
+          <li><a href="/login">login</a></li>
+          <li><a href="/singup">sign up</a></li>
+        <% end %>
+      </ul>
   </nav>
 </head>
 <body>
