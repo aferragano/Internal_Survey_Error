@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   include BCrypt
+    
   has_many :surveys
   
   validates :name,      presence: true
