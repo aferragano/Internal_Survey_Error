@@ -1,0 +1,46 @@
+
+.headline {
+	background-color: #2D2E29;
+	color:#CAFF11;
+	height: auto;
+	width:auto;
+	font-family: 'Righteous', cursive;
+	font-size:1.4em;
+	margin: 8px;
+	padding: 8px;
+}
+
+nav {
+	background-color: #7D7F73;
+	color:#EDFFAD;
+	height: auto;
+	width:auto;
+	font-family: 'Righteous', cursive;
+}
+
+.login {
+	background-color: #7D7F73;
+	color:Black;
+	height: auto;
+	width:20%;
+	font-family: 'Righteous', cursive;
+	text-align: left;
+	float: right;
+	padding:2px;
+	margin:2px;
+}
+
+.signup {
+	background-color: #7D7F73;
+	color:Black;
+	height: auto;
+	width:20%;
+	font-family: 'Righteous', cursive;
+	text-align: left;
+	float: right;
+	padding:2px;
+	margin:2px;
+}
+a {
+	text-decoration: none;
+}

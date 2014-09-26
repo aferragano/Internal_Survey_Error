@@ -11,11 +11,29 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-
+  <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  
+  <title>Internal Survey Error</title>
+  <div class="headline"> Internal Survey Error </div>
 
-  <title></title>
+  <nav>
+    sign in 
+    create account 
+    log out
+    boop 
+    bop
+      <ul>
+        <% if session[:user_id] %>
+          <li><a href="/user/new">new user</a></li>
+          <li><a href="/logout">log out</a></li>
+        <% else %>
+          <li><a href="/login">login</a></li>
+          <li><a href="/singup">sign up</a></li>
+        <% end %>
+      </ul>
+  </nav>
 </head>
 <body>
   <%= yield %>
