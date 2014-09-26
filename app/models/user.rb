@@ -2,11 +2,11 @@ class User < ActiveRecord::Base
   include BCrypt
   has_many :surveys
   
-  validates :username,  presence: true,
-                        uniqueness: true
+  validates :name,      presence: true
   validates :email,     uniqueness: true,
                         format: { :with => /\w+@\w+\.\w+/}
-  validate :password,   presence: true
+  validate :password,   presence: true,
+                        length: { in: 6..20 }
 
   def password
     @password ||= Password.new(password_digest)
