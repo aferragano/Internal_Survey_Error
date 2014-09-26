@@ -1,0 +1,19 @@
+
+.headline {
+	background-color: #2D2E29;
+	color:#CAFF11;
+	height: auto;
+	width:auto;
+	font-family: 'Righteous', cursive;
+	font-size:1.4em;
+	margin: 8px;
+	padding: 8px;
+}
+
+nav {
+	background-color: #7D7F73;
+	color:#EDFFAD;
+	height: auto;
+	width:auto;
+	font-family: 'Righteous', cursive;
+}
