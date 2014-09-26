@@ -1,8 +1,5 @@
-get 'login' do 
-	erb :'login'
-end
 
-post 'login' do 
+get '/login' do 
 	user = User.authenticate(params[:user])
 	unless user.nil?
 		session[:user_id] = user.id 
