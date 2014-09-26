@@ -6,7 +6,7 @@ post 'login' do
 	user = User.authenticate(params[:user])
 	unless user.nil?
 		session[:user_id] = user.id 
-		redirect '/'
+		redirect :index
 	end 
 	redirect 'login'
 end
@@ -19,5 +19,5 @@ end
 post '/signup' do 
 	user = User.create(params[:user])
 	session[:user_id] =user.id
-	redirect '/'
+	redirect :index
 end
