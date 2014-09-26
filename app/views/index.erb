@@ -1,39 +1,47 @@
 <!-- index.erb -->
+<% if session[:user_id]%>
+	<div class="login">
+		<form input="/login" method="POST">
+			<p>LOGIN</p>
+			EMAIL:
+			<br>
+			<input type="text" name="user[email]">
+			<br>
+			PASSWORD:
+			<br>
+			<input type="password" name="user[password]">
+			<br>
+			<input type="submit" name="submit">
+		</form>
+	</div>
+<%else%>
+	<div class="signup">
+		<form input="/signup" method="POST">
+			<p>SIGNUP</p>
+			NAME:
+			<br>
+			<input type="text" name="user[name]">
+			<br>
+			EMAIL:
+			<br>
+			<input type="text" name="user[email]">
+			<br>
+			PASSWORD:
+			<br>
+			<input type="password" name="user[password]">
+			<br>
+			<input type="submit" name="submit">
 
-<div class="login">
-	<form input="/login" method="POST">
-		<p>LOGIN</p>
-		EMAIL:
-		<br>
-		<input type="text" name="user[email]">
-		<br>
-		PASSWORD:
-		<br>
-		<input type="password" name="user[password]">
-		<br>
-		<input type="submit" name="submit">
+		</form>
+	</div>
+<%end%>
 
-	</form>
+<div class="welcome"> Welcome MESSAGE HERE
+	<p>stuff about this website and stuff and about stuff
+	</p>
 </div>
 
-<div class="signup">
-	<form input="/signup" method="POST">
-		<p>SIGNUP</p>
-		NAME:
-		<br>
-		<input type="text" name="user[name]">
-		<br>
-		EMAIL:
-		<br>
-		<input type="text" name="user[email]">
-		<br>
-		PASSWORD:
-		<br>
-		<input type="password" name="user[password]">
-		<br>
-		<input type="submit" name="submit">
 
-	</form>
-</div>
+
 
 		

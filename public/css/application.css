@@ -1,7 +1,7 @@
 
 .headline {
 	background-color: #2D2E29;
-	color:#CAFF11;
+	color:#EDFFAD;
 	height: auto;
 	width:auto;
 	font-family: 'Righteous', cursive;
@@ -11,15 +11,16 @@
 }
 
 nav {
-	background-color: #7D7F73;
+	background-color: #2D2E29;
 	color:#EDFFAD;
 	height: auto;
 	width:auto;
 	font-family: 'Righteous', cursive;
+	text-align: right;
 }
 
 .login {
-	background-color: #7D7F73;
+	background-color: #A2D77E;
 	color:Black;
 	height: auto;
 	width:20%;
@@ -31,7 +32,7 @@ nav {
 }
 
 .signup {
-	background-color: #7D7F73;
+	background-color: #A2D77E;
 	color:Black;
 	height: auto;
 	width:20%;
@@ -44,3 +45,19 @@ nav {
 a {
 	text-decoration: none;
 }
+a:visited{
+	color:#A2D77E;
+}
+.welcome {
+	width: 50%;
+	height:150px;
+	background-color: #A2D77E;
+	color:black;
+	margin:10px;
+	padding:10px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: 'Righteous', cursive;
+}
+
