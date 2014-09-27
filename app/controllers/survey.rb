@@ -43,7 +43,13 @@ end
 
 post '/survey/:id' do
   @user = User.find(session[:user_id])
-
- @user.responses.find_or_create_by(option_id: params[:"option.id"])
+ p "-" * 50
+ p params
+ p "-" * 50
+ p params.keys
+  answers = params.keys[0..4]
+  answers.each do |ans|
+    @user.responses.create(:option_id => ans.to_i)
+  end
   redirect '/'
 end
