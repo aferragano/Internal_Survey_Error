@@ -1,10 +1,31 @@
 $( document ).ready(function() {
-
     $.colorbox({closeButton: false, width: '250', height:'250px', html:'<div class="login"><center><form action="/login" method="POST"><p><br>LOGIN</p><br><input type="text" name="email" placeholder="email"><br><br><input type="password" name="password" placeholder="password"><br><br><input class="btn btn-primary" type="submit" name="Login"></form></center></div>'});
 
-    $(".login").submit(function(event){
+    $(".login form").submit(function(event){
     	event.preventDefault();
-    	$.colorbox.close();
+    	$.ajax({
+    		type: "POST",
+    		url: "/login",
+    		data: $(this).serialize()
+    	}).done(function(data){
+    		if (data == "true") {
+    			$.colorbox.close();
+    		} else{
+    			$.extend(true, $.simplyToast.defaultOptions,
+					{	
+					   align: 'center',
+					   offset:
+						{
+						   from: "top",
+						   amount: 280
+						}
+					});
+    			$.simplyToast("Incorrect Credentials", 'danger');
+    		}
+    	});
     });
 
 });
+
+
+// $.post("/login", this.serialize()).done

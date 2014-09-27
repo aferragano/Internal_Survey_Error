@@ -25,8 +25,8 @@
             <li><a href="#">Create</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-        		<%if session[:id] != nil %>
-            <li><a href="#">Logout</a></li>
+        		<%if session[:id] == nil %>
+            <li><a href="#">Login</a></li>
             <%end%>
         </ul>
     </div>

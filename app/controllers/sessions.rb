@@ -8,17 +8,17 @@ post '/login' do # Tested and works properly
   user = User.find_by(email: params[:email])
 
   if user == nil
-    redirect '/home'
+    return false.to_json
   end
 
   valid = user.authenticate(params[:password])
   
   if valid == false
-    redirect '/home'
+    return false.to_json
   else
     session[:id] = valid.id
     puts "I'm a boss"
-    erb :another_place
+    return true.to_json
   end
 
 end
