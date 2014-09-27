@@ -14,5 +14,16 @@ $(document).ready(function() {
     $('.signup').show();
     $('.login').hide();
   })
-    $('.login').hide();
+
+    // $('#show-survey').hide();
+    // $('#submit-survey').submit(function(event){
+    //   event.preventDefault();
+    //   $.ajax({
+    //     type: "POST",
+    //     url: $(this).attr('action'),
+    //     data: $(this).serialize(),
+    //     dataType: "html"
+    //   })
+    //   $('#show-survey').show();
+    // });
 });
