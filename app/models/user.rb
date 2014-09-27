@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
   include BCrypt
-    
+
   has_many :surveys
-  
+  has_many :responses
+
   validates :name,      presence: true
   validates :email,     uniqueness: true,
                         format: { :with => /\w+@\w+\.\w+/}
