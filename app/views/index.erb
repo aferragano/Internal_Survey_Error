@@ -39,8 +39,8 @@
 
 
   <% if session[:user_id] %>
-		<button type="submit" class="create-survey-btn">create survey</button>
-		<button type="submit" class="take-survey-btn">take a survey</button>
+		<a href="/create"><button type="submit" class="create-survey-btn">create survey</button></a>
+		<a href="/take"><button type="submit" class="take-survey-btn">take a survey</button></a>
 
 			<% @survey.each do |survey|%>
 				<p><%=survey.title%>
