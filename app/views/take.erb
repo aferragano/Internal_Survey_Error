@@ -19,10 +19,11 @@
       <h3><%=q.question%></h3>
       <% q.options.each do |opt|%>
         <h4><%=opt.option%></h4>
-        <p><%=opt.responses.count%></p>
+        <p><%total_count = opt.responses.count%>
+          <%= total_count%><br>
+          <%="-----" * total_count%>
+
+        </p>
       <%end%>
     <%end%>
-
-
-
 </div>
