@@ -9,6 +9,6 @@ take your survey here
 <%@survey.questions.each do |q|%>
   <h3><%=q.question%></h3>
   <% q.options.each do |opt|%>
-    <p><%=opt.option%>
+    <input type="radio" name='<%="#{q.id}"%>' value='<%="#{opt.option}"%>'><%=opt.option%><br>
   <%end%>
 <%end%>
