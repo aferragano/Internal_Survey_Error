@@ -1,14 +1,11 @@
-<!-- take.erb -->
-take your survey here
+<div id="take-survey">
 
+  <h2><%=@survey.title%></h2>
 
-<h2><%=@survey.title%></<h2></h2>>
-
-
-
-<%@survey.questions.each do |q|%>
-  <h3><%=q.question%></h3>
-  <% q.options.each do |opt|%>
-    <input type="radio" name='<%="#{q.id}"%>' value='<%="#{opt.option}"%>'><%=opt.option%><br>
+  <%@survey.questions.each do |q|%>
+    <h3><%=q.question%></h3>
+    <% q.options.each do |opt|%>
+      <input type="radio" name='<%="#{q.id}"%>' value='<%="#{opt.option}"%>'><%=opt.option%><br>
+    <%end%>
   <%end%>
-<%end%>
+</div>
