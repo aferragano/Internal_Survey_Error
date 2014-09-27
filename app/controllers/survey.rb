@@ -36,5 +36,7 @@ end
 
 
 get '/take' do
+  @survey = Survey.last
+
   erb :'/take'
 end

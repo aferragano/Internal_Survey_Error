@@ -1,2 +1,12 @@
 <!-- take.erb -->
 take your survey here
+
+
+<h3><%=@survey.title%></h3>
+<h4><%=@survey.questions.last.question%></h4>
+
+
+
+<%@survey.questions.last.options.each do |option|%>
+  <p><%=option.option %>
+<%end%>
