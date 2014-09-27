@@ -1,4 +1,4 @@
-User.create(name: "admin", password: "password")
+User.create(name: "admin", email: "admin@admin.com",  password: "password")
 
 50.times do 
   User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password(8))
