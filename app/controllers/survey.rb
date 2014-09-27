@@ -44,6 +44,6 @@ end
 post '/survey/:id' do
   @user = User.find(session[:user_id])
 
-  @response = @user.responses.create(option_id: params[:"#{option}"])
+ @user.responses.find_or_create_by(option_id: params[:"option.id"])
   redirect '/'
 end
