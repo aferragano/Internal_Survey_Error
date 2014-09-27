@@ -1,8 +1,3 @@
-get '/login-form' do
-  response = erb :'_login-form', :layout => false
-  return response.to_json
-end
-
 post '/login' do # Tested and works properly 
    
   user = User.find_by(email: params[:email])

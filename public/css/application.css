@@ -1,3 +1,17 @@
+html, body{
+	padding-bottom: 20%;
+}
 #colorbox {
 	background-color: #e7e7e7;	
+}
+
+#block-screen {
+  position:fixed;
+  height: 100%;
+  width: 100%;
+  /*margin-top:-10%;*/
+  background-color: rgba(0,0,0,0.8);
+}
+.homepage{
+	padding-bottom: 20px;
 }

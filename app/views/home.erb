@@ -1,12 +1,4 @@
-<!-- <nav class="navbar navbar-default navbar-static-top" role="navigation">
-  <div class="container navbar-text-position">
-		<a class='navbar-text-position' href=""><b>Survey Gorilla</b></a>  |  
-		<a class='navbar-text-position' href="/new">Create</a> | 
-		<%if session[:id] != nil %>
-		<a type="hidden" class='navbar-text-position login-btn' href="/logout"> logout </a>
-		<%end%> 
-  </div>
-</nav -->
+<div class='homepage'>
 <nav role="navigation" class="navbar navbar-default">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -31,3 +23,10 @@
         </ul>
     </div>
 </nav>
+<a href="/take"><button type="submit" class="take-survey-btn">take a survey</button></a>
+			<% @surveys.each do |survey|%>
+			<p>Survey:
+				<a href='survey/<%="#{survey.id}"%>'><%=survey.title%></a>
+
+			<%end%>
+</div>

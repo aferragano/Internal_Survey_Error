@@ -1,6 +1,5 @@
 $( document ).ready(function() {
-    $.colorbox({closeButton: false, width: '250', height:'250px', html:'<div class="login"><center><form action="/login" method="POST"><p><br>LOGIN</p><br><input type="text" name="email" placeholder="email"><br><br><input type="password" name="password" placeholder="password"><br><br><input class="btn btn-primary" type="submit" name="Login"></form></center></div>'});
-
+    $.colorbox({opacity: '.3', closeButton: false, width: '250', height:'250px', html:'<div class="login"><center><form action="/login" method="POST"><p><br>LOGIN</p><br><input type="text" name="email" placeholder="email"><br><br><input type="password" name="password" placeholder="password"><br><br><input class="btn btn-primary" type="submit" name="Login"></form></center></div>'});
     $(".login form").submit(function(event){
     	event.preventDefault();
     	$.ajax({
@@ -10,6 +9,7 @@ $( document ).ready(function() {
     	}).done(function(data){
     		if (data == "true") {
     			$.colorbox.close();
+                $( "#block-screen" ).fadeOut( "slow");
     		} else{
     			$.extend(true, $.simplyToast.defaultOptions,
 					{	
@@ -24,8 +24,4 @@ $( document ).ready(function() {
     		}
     	});
     });
-
 });
-
-
-// $.post("/login", this.serialize()).done
