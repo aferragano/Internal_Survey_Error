@@ -4,5 +4,14 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  
+  $('.signup').hide();
+  $('.login').hide();
+  $('.login-button').click(function(){
+    $('.login').show();
+    $('.signup').hide();
+  })
+    $('.signup-button').click(function(){
+    $('.signup').show();
+    $('.login').hide();
+  })
 });

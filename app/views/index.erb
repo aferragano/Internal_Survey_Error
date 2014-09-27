@@ -36,8 +36,24 @@
 	</form>
 </div>
 
-<div class="welcome">
-	WELCOME ASS DIV HERE
-</div>
 
-		
+
+  <% if session[:user_id] %>
+		<button type="submit" class="create-survey-btn">create survey</button>
+		<button type="submit" class="take-survey-btn">take a survey</button>
+
+			<% @survey.each do |survey|%>
+				<p><%=survey.title%>
+			<%end%>
+
+    <% else %>
+  <div class="welcome">
+			WELCOME ASS DIV HERE
+		</div>
+	<% end %>
+</ul>
+
+
+
+
+
