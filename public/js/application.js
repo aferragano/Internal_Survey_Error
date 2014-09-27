@@ -4,5 +4,26 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  
+  $('.signup').hide();
+  $('.login').hide();
+  $('.login-button').click(function(){
+    $('.login').show();
+    $('.signup').hide();
+  })
+    $('.signup-button').click(function(){
+    $('.signup').show();
+    $('.login').hide();
+  })
+
+    // $('#show-survey').hide();
+    // $('#submit-survey').submit(function(event){
+    //   event.preventDefault();
+    //   $.ajax({
+    //     type: "POST",
+    //     url: $(this).attr('action'),
+    //     data: $(this).serialize(),
+    //     dataType: "html"
+    //   })
+    //   $('#show-survey').show();
+    // });
 });

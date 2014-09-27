@@ -4,13 +4,13 @@
 	<form action="/login" method="GET">
 		<p>LOGIN</p>
 		EMAIL:
-		<br>
+		<p>
 		<input type="text" name="user[email]">
-		<br>
+		<p>
 		PASSWORD:
-		<br>
+		<p>
 		<input type="password" name="user[password]">
-		<br>
+		<p>
 		<input type="submit" name="submit">
 
 	</form>
@@ -20,24 +20,43 @@
 	<form action="/signup" method="POST">
 		<p>SIGNUP</p>
 		NAME:
-		<br>
+		<p>
 		<input type="text" name="user[name]">
-		<br>
+		<p>
 		EMAIL:
-		<br>
+		<p>
 		<input type="text" name="user[email]">
-		<br>
+		<p>
 		PASSWORD:
-		<br>
+		<p>
 		<input type="password" name="user[password]">
-		<br>
+		<p>
 		<input type="submit" name="submit">
 
 	</form>
 </div>
 
-<div class="welcome">
-	WELCOME ASS DIV HERE
-</div>
 
-		
+
+  <% if session[:user_id] %>
+		<a href="/create"><button type="submit" class="create-survey-btn">create survey</button></a>
+
+		<a href="/take"><button type="submit" class="take-survey-btn">take a survey</button></a>
+
+			<% @survey.each do |survey|%>
+			<p>Survey:
+				<a href='survey/<%="#{survey.id}"%>'><%=survey.title%></a>
+
+			<%end%>
+
+    <% else %>
+  <div class="welcome">
+			WELCOME ASS DIV HERE
+		</div>
+	<% end %>
+</ul>
+
+
+
+
+

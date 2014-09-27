@@ -2,17 +2,50 @@
 # survey create get post update diplay?
 
 
-get '/survey/create' do
-	erb :'/create_survey'
+get '/create' do
+	erb :'/create'
 end
 
+post '/create/' do
+  @user = User.find(session[:user_id])
+	@survey = @user.surveys.create(title: params[:title])
+	# @question = @survey.questions.create(question: params[:question])
+	# @question.options.create(option: params[:option1])
+ #  @question.options.create(option: params[:option2])
+ #  @question.options.create(option: params[:option3])
+ #  @question.options.create(option: params[:option4])
 
-post '/survey/create/' do
-	@survey = Survey.create(title: params[:survey])
-	# question = @survey.questions.create(question: params[:question])
-	option = question.options.create(option: params[:option])
+  @question = Survey.last.questions.create(question: params[:question])
+  @question.options.create(option: params[:option1])
+  @question.options.create(option: params[:option2])
+  @question.options.create(option: params[:option3])
+  @question.options.create(option: params[:option4])
+  redirect '/'
 end
 
-post '/question/new' do
-	question = @survey.questions.create(question: params[:question])
+# This shit broke errything. revisit later.
+# post '/question/new' do
+# 	# # @question = @survey.questions.create(question: params[:question])
+#  #  @survey.questions.last.option.create(option: params[:option1])
+#  #  @question<< Option.create(option: params[:option1])
+#  #  @question<< Option.create(option: params[:option2])
+#  #  @question<< Option.create(option: params[:option3])
+#  #  @question<< Option.create(option: params[:option4])
+#   redirect :'/'
+# end
+
+
+get '/survey/:id' do
+  @survey = Survey.find(params[:id])
+
+  erb :'/take'
+end
+
+post '/survey/:id' do
+  @user = User.find(session[:user_id])
+  answers = params.values[0..4]
+  answers.each do |ans|
+    @user.responses.create(:option_id => ans.to_i)
+  end
+  redirect '/'
 end
