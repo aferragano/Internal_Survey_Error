@@ -43,11 +43,7 @@ end
 
 post '/survey/:id' do
   @user = User.find(session[:user_id])
- p "-" * 50
- p params
- p "-" * 50
- p params.keys
-  answers = params.keys[0..4]
+  answers = params.values[0..4]
   answers.each do |ans|
     @user.responses.create(:option_id => ans.to_i)
   end

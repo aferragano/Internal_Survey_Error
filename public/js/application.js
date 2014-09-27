@@ -14,4 +14,5 @@ $(document).ready(function() {
     $('.signup').show();
     $('.login').hide();
   })
+    $('.login').hide();
 });

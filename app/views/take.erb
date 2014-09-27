@@ -6,11 +6,11 @@
     <%@survey.questions.each do |q|%>
       <h3><%=q.question%></h3>
       <% q.options.each do |opt|%>
-        <input type="radio" name='<%="#{opt.id}"%>' value='<%="#{opt.option}"%>'><%=opt.option%><br>
+        <input type="radio" name='<%="#{q.id}"%>' value='<%="#{opt.id}"%>'><%=opt.option%><br>
       <%end%>
     <%end%>
-      <input type="submit" name="submit">
+      <input  type="submit" name="submit">
     </form>
-<p>
-
 </div>
+
+<div
