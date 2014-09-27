@@ -35,8 +35,8 @@ end
 # end
 
 
-get '/take' do
-  @survey = Survey.last
+get '/survey/:id' do
+  @survey = Survey.find_by(params[:survey_id])
 
   erb :'/take'
 end

@@ -45,7 +45,7 @@
 
 			<% @survey.each do |survey|%>
 			<p>Survey:
-				<%=survey.title%>
+				<a href='survey/<%="#{survey.id}"%>'><%=survey.title%></a>
 
 			<%end%>
 
