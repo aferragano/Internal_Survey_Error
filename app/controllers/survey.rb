@@ -7,14 +7,20 @@ get '/create' do
 end
 
 post '/create/' do
-	@survey = Survey.create(title: params[:title])
-	@question = @survey.questions.create(question: params[:question])
-	@question.options.create(option: params[:option1])
+  @user = User.find(session[:user_id])
+	@survey = @user.surveys.create(title: params[:title])
+	# @question = @survey.questions.create(question: params[:question])
+	# @question.options.create(option: params[:option1])
+ #  @question.options.create(option: params[:option2])
+ #  @question.options.create(option: params[:option3])
+ #  @question.options.create(option: params[:option4])
+
+  @question = Survey.last.questions.create(question: params[:question])
+  @question.options.create(option: params[:option1])
   @question.options.create(option: params[:option2])
   @question.options.create(option: params[:option3])
   @question.options.create(option: params[:option4])
-
-  redirect :'/'
+  redirect '/'
 end
 
 # This shit broke errything. revisit later.
