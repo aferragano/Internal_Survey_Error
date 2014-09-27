@@ -36,7 +36,13 @@ end
 
 
 get '/survey/:id' do
-  @survey = Survey.find_by(params[:survey_id])
+  @survey = Survey.find(params[:id])
 
   erb :'/take'
+end
+
+post '/survey/:id' do
+  @user = User.find(session[:user_id])
+  @response = @user.responses.create(option_id: params[:option])
+  redirect '/'
 end

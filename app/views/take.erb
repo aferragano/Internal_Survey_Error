@@ -2,10 +2,15 @@
 
   <h2><%=@survey.title%></h2>
 
-  <%@survey.questions.each do |q|%>
-    <h3><%=q.question%></h3>
-    <% q.options.each do |opt|%>
-      <input type="radio" name='<%="#{q.id}"%>' value='<%="#{opt.option}"%>'><%=opt.option%><br>
+  <form action='/survey/<%="#{@survey.id}"%>' method="POST">
+    <%@survey.questions.each do |q|%>
+      <h3><%=q.question%></h3>
+      <% q.options.each do |opt|%>
+        <input type="radio" name='<%="#{q.id}"%>' value='<%="#{opt.option}"%>'><%=opt.option%><br>
+      <%end%>
     <%end%>
-  <%end%>
+      <input type="submit" name="submit">
+    </form>
+<p>
+
 </div>
