@@ -2,11 +2,13 @@
 take your survey here
 
 
-<h3><%=@survey.title%></h3>
-<h4><%=@survey.questions.last.question%></h4>
+<h2><%=@survey.title%></<h2></h2>>
 
 
 
-<%@survey.questions.last.options.each do |option|%>
-  <p><%=option.option %>
+<%@survey.questions.each do |q|%>
+  <h3><%=q.question%></h3>
+  <% q.options.each do |opt|%>
+    <p><%=opt.option%>
+  <%end%>
 <%end%>
