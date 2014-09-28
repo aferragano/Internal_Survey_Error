@@ -41,7 +41,7 @@
   <% if session[:user_id] %>
 		<a href="/create"><button type="submit" class="create-survey-btn">create survey</button></a>
 
-		<a href="/take"><button type="submit" class="take-survey-btn">take a survey</button></a>
+		<!-- <a href="/take"><button type="submit" class="take-survey-btn">take a survey</button></a> -->
 
 			<% @survey.each do |survey|%>
 			<p>Survey:
@@ -51,7 +51,8 @@
 
     <% else %>
   <div class="welcome">
-			WELCOME ASS DIV HERE
+			Welcome to Internal Survey Error!<br>
+			A not so smooth way to create and take surveys!
 		</div>
 	<% end %>
 </ul>

@@ -36,7 +36,7 @@ $(document).ready(function() {
         data: $(this).serialize(),
         dataType: "html"
       }).done(function(){
-        $('#create-question').trigger("reset");
+        $('#create-question').trigger("reset", 4);
       })
     })
     // $('#show-survey').hide();
