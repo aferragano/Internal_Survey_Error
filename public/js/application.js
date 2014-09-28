@@ -28,6 +28,17 @@ $(document).ready(function() {
       })
       })
     });
+    $('#create-question').submit(function(event){
+      event.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        dataType: "html"
+      }).done(function(){
+        $('#create-question').trigger("reset");
+      })
+    })
     // $('#show-survey').hide();
     // $('#submit-survey').submit(function(event){
     //   event.preventDefault();

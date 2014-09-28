@@ -36,12 +36,15 @@ end
 #   redirect :'/'
 # end
 post '/create/question' do
+
   @question = Survey.last.questions.create(question: params[:question])
   @question.options.create(option: params[:option1])
   @question.options.create(option: params[:option2])
   @question.options.create(option: params[:option3])
   @question.options.create(option: params[:option4])
-  redirect '/'
+  response = erb :'_question',
+      :layout => false
+  # redirect '/'
 end
 
 get '/survey/:id' do
