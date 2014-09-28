@@ -1,6 +1,10 @@
-<!-- create_survey.erb -->
+<div class="create-survey-title">
+  <form id="create-survey" action='/create/' method="POST">
+  	<input type="text" placeholder="Survey Title" name="title">
+    <p><input class="create-survey-btn" type="submit" value="SUBMIT">
+  </form>
+</div>
 
-<form id="create-survey" action='/create/' method="POST">
-	<input type="text" placeholder="Survey Title" name="title">
+
   <%= erb :'_question' %>
-</form>
+

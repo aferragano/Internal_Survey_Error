@@ -9,12 +9,25 @@ $(document).ready(function() {
   $('.login-button').click(function(){
     $('.login').show();
     $('.signup').hide();
-  })
+  });
     $('.signup-button').click(function(){
     $('.signup').show();
     $('.login').hide();
-  })
-
+  });
+    $('.question-form').hide();
+    $('#create-survey').submit(function(event){
+      event.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        dataType: "html"
+      }).done(function(){
+        $('.create-survey-title').hide(function(){
+        $('.question-form').show();
+      })
+      })
+    });
     // $('#show-survey').hide();
     // $('#submit-survey').submit(function(event){
     //   event.preventDefault();
