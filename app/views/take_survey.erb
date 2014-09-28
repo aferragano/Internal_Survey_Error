@@ -2,7 +2,7 @@
 
   <h2><%=@survey.title%></h2>
 
-  <form action='/survey/<%="#{@survey.id}"%>' method="POST" id= "submit-survey">
+  <form action='Respo' method="POST" id= "submit-survey">
     <%@survey.questions.each do |q|%>
       <h3><%=q.question%></h3>
       <% q.options.each do |opt|%>

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :surveys
+  has_many :responses
   has_secure_password                      
   
   validates :name,      presence: true
