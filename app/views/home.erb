@@ -17,8 +17,8 @@
             <li><a href="#">Create</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-        		<%if session[:id] == nil %>
-            <li><a href="#">Login</a></li>
+        	<%if session[:id] != nil %>
+                <li><a id='logout-btn' href="/logout">Logout</a></li>
             <%end%>
         </ul>
     </div>
@@ -27,6 +27,5 @@
 			<% @surveys.each do |survey|%>
 			<p>Survey:
 				<a href='survey/<%="#{survey.id}"%>'><%=survey.title%></a>
-
 			<%end%>
 </div>

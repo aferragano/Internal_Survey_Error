@@ -19,3 +19,8 @@ end
 get '/invalid-session' do #return true/false based on whether or not there is a current session
   return invalid_session?.to_json
 end
+
+get '/logout' do 
+  session[:id] = nil
+  redirect to '/'
+end

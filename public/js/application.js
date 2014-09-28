@@ -15,6 +15,7 @@ function checkLogin(){
             if (data == "true") {
                 $.colorbox.close();
                 $( "#block-screen" ).fadeOut( "slow");
+                $(".navbar-right").append('<li><a id="logout-btn" href="/logout">Logout</a></li>');
             } else{
                 $.extend(true, $.simplyToast.defaultOptions,
                     {
@@ -40,7 +41,7 @@ function invalidSession() {
         if (JSON.parse(response)) {
             checkLogin();
         } else {
-
+           $( "#block-screen" ).fadeOut( "slow");  
         }
     });
 }
