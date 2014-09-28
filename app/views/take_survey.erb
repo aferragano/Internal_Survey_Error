@@ -1,0 +1,29 @@
+<div id="take-survey">
+
+  <h2><%=@survey.title%></h2>
+
+  <form action='/survey/<%="#{@survey.id}"%>' method="POST" id= "submit-survey">
+    <%@survey.questions.each do |q|%>
+      <h3><%=q.question%></h3>
+      <% q.options.each do |opt|%>
+        <input type="radio" name='<%="#{q.id}"%>' value='<%="#{opt.id}"%>'><%=opt.option%><br>
+      <%end%>
+    <%end%>
+      <input id="survey-submit-btn" type="submit" name="submit">
+    </form>
+</div>
+
+<div id="show-survey">
+  <h2><%=@survey.title%></h2>
+    <% @survey.questions.each do |q|%>
+      <h3><%=q.question%></h3>
+      <% q.options.each do |opt|%>
+        <h4><%=opt.option%></h4>
+        <p><%total_count = opt.responses.count%>
+          <%= total_count%><br>
+          <%="-----" * total_count%>
+
+        </p>
+      <%end%>
+    <%end%>
+</div>

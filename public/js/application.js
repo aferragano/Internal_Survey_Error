@@ -16,6 +16,7 @@ function checkLogin(){
                 $.colorbox.close();
                 $( "#block-screen" ).fadeOut( "slow");
                 $(".navbar-right").append('<li><a id="logout-btn" href="/logout">Logout</a></li>');
+                $(".list-group-item").css('z-index', 0);
             } else{
                 $.extend(true, $.simplyToast.defaultOptions,
                     {
@@ -23,7 +24,7 @@ function checkLogin(){
                        offset:
                         {
                            from: "top",
-                           amount: 280
+                           amount: 300
                         }
                     });
                 $.simplyToast("Incorrect Credentials", 'danger');
@@ -39,9 +40,11 @@ function invalidSession() {
     }).success(function(response){
         // console.log(response);
         if (JSON.parse(response)) {
+            $( "#block-screen" ).show();
             checkLogin();
         } else {
            $( "#block-screen" ).fadeOut( "slow");  
+           $(".list-group-item").css('z-index', 0);
         }
     });
 }
