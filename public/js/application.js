@@ -1,10 +1,22 @@
 $( document ).ready(function() {
     invalidSession();
+    $('#create-survey').submit(function(event){
+      event.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        dataType: "html"
+      }).done(function(){
+        $('.create-survey-title').hide(function(){
+            $('.question-form').show();
+        })
+      })
 });
 
 
 function checkLogin(){
-    $.colorbox({opacity: '.3', closeButton: false, width: '250', height:'250px', html:'<div class="login"><center><form action="/login" method="POST"><p><br>LOGIN</p><br><input type="text" name="email" placeholder="email"><br><br><input type="password" name="password" placeholder="password"><br><br><input class="btn btn-primary" type="submit" name="Login"></form></center></div>'});
+    $.colorbox({closeButton: false, width: '250', height:'250px', html:'<div class="login"><center><form action="/login" method="POST"><p><br>LOGIN</p><br><input type="text" name="email" placeholder="email"><br><br><input type="password" name="password" placeholder="password"><br><br><input class="btn btn-primary" type="submit" name="Login"></form></center></div>'});
     $(".login form").submit(function(event){
         event.preventDefault();
         $.ajax({
@@ -38,7 +50,6 @@ function invalidSession() {
         type: "GET",
         url: "/invalid-session"
     }).success(function(response){
-        // console.log(response);
         if (JSON.parse(response)) {
             $( "#block-screen" ).show();
             checkLogin();

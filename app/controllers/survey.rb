@@ -14,3 +14,12 @@ post '/survey/:id' do
   end
   redirect '/'
 end
+
+get '/create' do 
+  erb :'/create'
+end
+
+post '/create/' do 
+  @user = User.find(session[:id])
+  @survey = @user.surveys.create(title: params[:title])
+end
